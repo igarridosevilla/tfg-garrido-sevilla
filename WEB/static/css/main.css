@@ -1,0 +1,119 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: Copperplate;
+}
+
+body {
+  margin: 0px;
+  min-height: 100%;
+  background-image: url("../images/space.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  min-height: 80px;
+  margin: 1%;
+  padding: 0px 15px 0px 15px;
+  border-radius: 20px;
+  opacity: 0.9;
+}
+
+.headerText {
+  font-size: 48px;
+  margin: 0;
+}
+
+.logo {
+  height: 70px;
+}
+
+.app {
+  display: flex;
+  justify-content: space-around;
+  margin: 2.5%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  padding: 10px 25px 10px 25px;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.results {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+.risk_option {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 50%;
+  justify-content: space-around;
+  padding: 11px 12px 12px 12px;
+}
+
+input[type="submit"] {
+  width: 20%;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+  box-shadow: 0px 5px 15px 0px rgba(76, 175, 80, 0.5);
+}
+input[type="submit"]:hover {
+  background-color: #2b642d;
+  box-shadow: 0px 5px 15px 0px rgba(43, 100, 45, 0.5);
+}
+
+textarea {
+  width: 80%;
+  padding: 12px 6px 12px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  resize: none;
+  opacity: 1;
+}
+
+select {
+  width: 65%;
+  padding: 12px 0px 12px 6px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+label {
+  font-size: 20px;
+}
+/* rgb(106, 128, 140);*/

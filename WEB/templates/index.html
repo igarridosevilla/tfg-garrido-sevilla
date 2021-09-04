@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TFG - Garrido Sevilla</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  </head>
+  <body>
+    <a href="/" style="color: inherit; text-decoration: none;">
+      <div id="header" class="header">
+        <img src="{{url_for('static', filename='images/logoVSH.png')}}" alt="Virtual Space Health" class="logo">
+        <h1 class="headerText">Trabajo Final de Grado</h1>
+        <h2>Ignacio Garrido Sevilla</h2>
+      </div>
+    </a>
+    <div class="app">
+      <div class="card">
+        <h1>Predecir riesgo</h1>
+        <form action = "{{url_for('predict')}}" method ="POST">
+          <label for="observations">Texto Libre:</label>
+          <textarea name="observations" rows="5" cols="20" placeholder="Introduzca las observaciones del paciente en inglés"></textarea>
+          <input type="submit" value="Predecir">
+        </form>
+        {% if result != undefined %}
+        <h2>Clasificación de los 5 modelos:</h2>
+        <div class="results">{{result}}</div>
+        {% endif %}
+      </div>
+      <div class="card">
+        <h1>Generar Paciente virtual</h1>
+        <form action = "{{url_for('generate')}}" method ="GET">
+          <label for="cies">Elija la patología del caso a generar:</label>
+          <select id="cies" name="cielist">
+            <option value="930.9">Abrasión ocular (cuerpo extraño) - 930.9</option>
+            <option value="716.9">Artritis aguda - 716.9</option>
+            <option value="M1">Aumento presión intracraneal - M1</option>
+            <option value="993.1">Barotrauma (bloqueo sinusal) - 993.1</option>
+            <option value="703.9">Caída de uñas tras EVA - 703.9</option>
+            <option value="478.19">Congestión nasal - 478.19</option>
+            <option value="361">Desprendimiento de retina - 361</option>
+            <option value="843.9">Distensión de cadera - 843.9</option>
+            <option value="993.3">Enfermedad por descompresión - 993.3</option>
+            <option value="841.9">Esguince / distensión del codo - 841.9</option>
+            <option value="M2">Exposición tóxica (amoniaco) - M2</option>
+            <option value="733.93">Fractura por estrés de la extremidad inferior - 733.93</option>
+            <option value="365.22">Glaucoma agudo - 365.22</option>
+            <option value="373.9">Infección en el ojo - 373.9</option>
+            <option value="959.12">Lesión abdominal - 959.12</option>
+            <option value="993.2">Mal de altura/hipoxia - 993.2</option>
+            <option value="389.9">Pérdida de audición - 389.9</option>
+            <option value="692.76">Quemadura solar - 692.76</option>
+            <option value="958.9">Síndrome compartimental agudo - 958.9</option>
+            <option value="990">Síndrome de irradiación aguda (ARS) - 990</option>
+          </select>
+          <div class="risk_option">
+            <input type="radio" id="riesgo" name="risk_option" value="Riesgo Vital" required>
+            <label for="riesgo">Riesgo Vital</label>
+            <input type="radio" id="no_riesgo" name="risk_option" value="No Riesgo Vital" required>
+            <label for="no_riesgo">No Riesgo Vital</label>
+          </div>
+          <input type="submit" value="Generar">
+        </form>
+        {% if patient != undefined%}
+        <h2>{{patient[0]}}</h2>
+        <div class="results">{{patient[1]}}</div>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

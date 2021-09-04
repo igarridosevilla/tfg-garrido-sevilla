@@ -1,0 +1,13 @@
+patient:
+    min_age: 20
+    max_age: 45
+    probability_man: 0.5
+    probability_risk: 0.5
+    min_length: 15
+    max_length: 30
+    just_men:
+      - "601"
+    just_women:
+      - "112,1"
+other:
+    total_cases: 3000
